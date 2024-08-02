@@ -1,0 +1,22 @@
+import re
+
+def count_occurrences(text, substr):
+    return len(re.findall(re.escape(substr), text))
+
+# Provided XML content as a string
+xml_content = " "
+
+# Strings to search for
+string_issuekey = "<issuekey id="
+string_subtask = "<subtask id="
+
+# Count occurrences
+occurrences_issuekey = count_occurrences(xml_content, string_issuekey)
+occurrences_subtask = count_occurrences(xml_content, string_subtask)
+
+# Calculate total occurrences
+total_occurrences = occurrences_issuekey + occurrences_subtask
+
+print(f"Occurrences of '{string_issuekey}': {occurrences_issuekey}")
+print(f"Occurrences of '{string_subtask}': {occurrences_subtask}")
+print(f"Total occurrences: {total_occurrences}")
